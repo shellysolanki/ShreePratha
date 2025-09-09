@@ -3,7 +3,7 @@ export async function addToCartApi(productId, quantity = 1, productType) {
   const user = JSON.parse(localStorage.getItem('userData') || 'null');
   if (!user?._id) throw new Error('Not logged in');
 
-  const res = await fetch('http://localhost:5000/cart', {
+  const res = await fetch('https://shreepratha.onrender.com/cart', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -47,7 +47,7 @@ const LoginPage = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      const res = await axios.post('https://shreepratha.onrender.com/api/auth/login', form);
       const { token } = res.data;
       localStorage.setItem('token', token);
       if (res.data?.user) {
@@ -74,7 +74,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async (credentialResponse) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/google-login', {
+      const res = await axios.post('https://shreepratha.onrender.com/api/auth/google-login', {
         token: credentialResponse.credential,
       });
 
@@ -304,7 +304,7 @@ export default LoginPage;
 //     }
 
 //     try {
-//       const res = await axios.post('http://localhost:5000/api/auth/login', form);
+//       const res = await axios.post('https://shreepratha.onrender.com/api/auth/login', form);
 //       const { token } = res.data;
 //       localStorage.setItem('token', token);
 //       const decoded = jwtDecode(token);
@@ -325,7 +325,7 @@ export default LoginPage;
 
 //   const handleGoogleLogin = async (credentialResponse) => {
 //     try {
-//       const res = await axios.post('http://localhost:5000/api/auth/google-login', {
+//       const res = await axios.post('https://shreepratha.onrender.com/api/auth/google-login', {
 //         token: credentialResponse.credential,
 //       });
 

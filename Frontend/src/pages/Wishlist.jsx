@@ -45,7 +45,7 @@ export default function Wishlist() {
       const amount = Math.max(1, Math.floor(Number(item.product.price) || 0));
 
       // Get key
-      const keyResp = await fetch('http://localhost:5000/payment/razorpay/key');
+      const keyResp = await fetch('https://shreepratha.onrender.com/payment/razorpay/key');
       const keyData = await keyResp.json();
       if (!keyData?.key) return toastError('Payment key not configured');
 
@@ -53,7 +53,7 @@ export default function Wishlist() {
       const safeReceipt = (`wish_${item.productType}_${item.product._id}_${Date.now()}`)
         .replace(/[^a-zA-Z0-9_]/g, '')
         .slice(0, 40);
-      const res = await fetch('http://localhost:5000/payment/razorpay/order', {
+      const res = await fetch('https://shreepratha.onrender.com/payment/razorpay/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount, currency: 'INR', receipt: safeReceipt })
@@ -73,7 +73,7 @@ export default function Wishlist() {
         order_id: data.order.id,
         handler: async function (response) {
           try {
-            await fetch('http://localhost:5000/payment/razorpay/verify', {
+            await fetch('https://shreepratha.onrender.com/payment/razorpay/verify', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({

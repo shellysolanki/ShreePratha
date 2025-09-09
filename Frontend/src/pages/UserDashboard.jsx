@@ -38,7 +38,7 @@ export default function UserDashboard() {
         }
         
         // Load user info from API
-        const response = await fetch('http://localhost:5000/users/me', { 
+        const response = await fetch('https://shreepratha.onrender.com/users/me', { 
           headers: { Authorization: `Bearer ${token}` } 
         });
         const data = await response.json();
@@ -59,17 +59,17 @@ export default function UserDashboard() {
 
     loadUserData();
 
-    fetch('http://localhost:5000/review/me', { headers: { Authorization: `Bearer ${token}` } })
+    fetch('https://shreepratha.onrender.com/review/me', { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
       .then(d => setMyReviews(d.reviews || []))
       .catch(() => {});
 
-    fetch('http://localhost:5000/payment/me/summary', { headers: { Authorization: `Bearer ${token}` } })
+    fetch('https://shreepratha.onrender.com/payment/me/summary', { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
       .then(d => setSummary({ totalOrders: d.totalOrders || 0, totalSpent: d.totalSpent || 0 }))
       .catch(() => {});
 
-    fetch('http://localhost:5000/payment/me/list', { headers: { Authorization: `Bearer ${token}` } })
+    fetch('https://shreepratha.onrender.com/payment/me/list', { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
       .then(d => setPurchases(d.items || []))
       .catch(() => {});
@@ -77,7 +77,7 @@ export default function UserDashboard() {
 
   const saveProfile = async () => {
     try {
-      const res = await fetch('http://localhost:5000/users/me', {
+      const res = await fetch('https://shreepratha.onrender.com/users/me', {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ export default function UserDashboard() {
 
   const refreshUserData = async () => {
     try {
-      const res = await fetch('http://localhost:5000/users/me', { 
+      const res = await fetch('https://shreepratha.onrender.com/users/me', { 
         headers: { Authorization: `Bearer ${token}` } 
       });
       const data = await res.json();

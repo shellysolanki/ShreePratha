@@ -4,7 +4,7 @@ export default function About() {
   const [about, setAbout] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/about/')
+    fetch('https://shreepratha.onrender.com/about/')
       .then(r => r.json())
       .then(setAbout)
       .catch(() => setAbout(null));

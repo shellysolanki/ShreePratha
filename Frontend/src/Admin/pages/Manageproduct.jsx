@@ -10,7 +10,7 @@ const ManageProduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products');
+      const res = await axios.get('https://shreepratha.onrender.com/api/products');
       setProducts(res.data);
     } catch (err) {
       console.error('Failed to fetch products:', err);
@@ -24,11 +24,11 @@ const ManageProduct = () => {
     try {
       // Try deleting from all known collections; ignore 404s
       const endpoints = [
-        `http://localhost:5000/api/products/${id}`, // generic (if used)
-        `http://localhost:5000/jewellery/${id}`,
-        `http://localhost:5000/bag/${id}`,
-        `http://localhost:5000/inner/${id}`,
-        `http://localhost:5000/makeup/${id}`,
+        `https://shreepratha.onrender.com/api/products/${id}`, // generic (if used)
+        `https://shreepratha.onrender.com/jewellery/${id}`,
+        `https://shreepratha.onrender.com/bag/${id}`,
+        `https://shreepratha.onrender.com/inner/${id}`,
+        `https://shreepratha.onrender.com/makeup/${id}`,
       ];
       await Promise.allSettled(
         endpoints.map((url) => axios.delete(url).catch(() => null))

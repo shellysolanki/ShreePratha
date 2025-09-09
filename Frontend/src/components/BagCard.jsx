@@ -31,7 +31,7 @@ export default function BagCard({ item, onDelete, isAdmin = false }) {
     if (!ok) return;
     setDeleting(true);
     try {
-      const res = await fetch(`http://localhost:5000/bag/${_id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } });
+      const res = await fetch(`https://shreepratha.onrender.com/bag/${_id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } });
       const data = await res.json();
       toastSuccess(data.message || 'Item deleted');
       if (onDelete) onDelete(_id);
@@ -48,7 +48,7 @@ export default function BagCard({ item, onDelete, isAdmin = false }) {
 
   const handleUpdate = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/bag/${_id}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/bag/${_id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updateForm),
@@ -76,10 +76,10 @@ export default function BagCard({ item, onDelete, isAdmin = false }) {
         return;
       }
       const amount = Number(price);
-      const keyResp = await fetch('http://localhost:5000/payment/razorpay/key');
+      const keyResp = await fetch('https://shreepratha.onrender.com/payment/razorpay/key');
       const keyData = await keyResp.json();
       if (!keyData?.key) return toastError(keyData?.error || 'Razorpay key not configured');
-      const res = await fetch('http://localhost:5000/payment/razorpay/order', {
+      const res = await fetch('https://shreepratha.onrender.com/payment/razorpay/order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default function BagCard({ item, onDelete, isAdmin = false }) {
         order_id: data.order.id,
         handler: async function (response) {
           try {
-            const verifyRes = await fetch('http://localhost:5000/payment/razorpay/verify', {
+            const verifyRes = await fetch('https://shreepratha.onrender.com/payment/razorpay/verify', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

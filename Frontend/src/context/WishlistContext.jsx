@@ -68,7 +68,7 @@ export const WishlistProvider = ({ children }) => {
     
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/wishlist/', {
+      const response = await fetch('https://shreepratha.onrender.com/wishlist/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
@@ -112,7 +112,7 @@ export const WishlistProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/wishlist/add', {
+      const response = await fetch('https://shreepratha.onrender.com/wishlist/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export const WishlistProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/wishlist/remove', {
+      const response = await fetch('https://shreepratha.onrender.com/wishlist/remove', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -207,7 +207,7 @@ export const WishlistProvider = ({ children }) => {
     if (!token) return 0;
 
     try {
-      const response = await fetch('http://localhost:5000/wishlist/count', {
+      const response = await fetch('https://shreepratha.onrender.com/wishlist/count', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();

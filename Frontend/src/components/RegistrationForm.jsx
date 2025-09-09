@@ -23,7 +23,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+//       const res = await axios.post('https://shreepratha.onrender.com/api/auth/register', formData);
 //       toastSuccess(res.data.message || 'Registered successfully', '/login');
 //     } catch (err) {
 //       toastError(err.response?.data?.message || 'Registration failed');
@@ -242,7 +242,7 @@ const RegistrationForm = () => {
     if (!validateForm()) return;
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://shreepratha.onrender.com/api/auth/register', formData);
       toastSuccess(res.data.message || 'Registered successfully', '/login');
     } catch (err) {
       toastError(err.response?.data?.message || 'Registration failed');

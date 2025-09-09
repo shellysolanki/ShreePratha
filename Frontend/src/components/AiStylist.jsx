@@ -17,7 +17,7 @@ export default function AiStylist() {
     if (!occasion && !outfit) return;
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/ai/suggest', {
+      const res = await fetch('https://shreepratha.onrender.com/ai/suggest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ occasion, outfit })

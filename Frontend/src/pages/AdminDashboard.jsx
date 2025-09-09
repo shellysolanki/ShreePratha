@@ -22,7 +22,7 @@
 
 //   const fetchJewels = async () => {
 //     try {
-//       const res = await fetch('http://localhost:5000/jewellery/all');
+//       const res = await fetch('https://shreepratha.onrender.com/jewellery/all');
 //       const data = await res.json();
 //       setJewelleryList(data);
 //     } catch (err) {
@@ -32,7 +32,7 @@
 
 //   const fetchMakeup = async () => {
 //     try {
-//       const res = await fetch('http://localhost:5000/makeup/all');
+//       const res = await fetch('https://shreepratha.onrender.com/makeup/all');
 //       if (!res.ok) throw new Error('Failed to fetch makeup');
 //       const data = await res.json();
 //       setMakeupList(data);
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
 
   const fetchJewels = async () => {
     try {
-      const res = await fetch('http://localhost:5000/jewellery/all');
+      const res = await fetch('https://shreepratha.onrender.com/jewellery/all');
       const data = await res.json();
       setJewelleryList(data);
     } catch (err) {
@@ -224,7 +224,7 @@ export default function AdminDashboard() {
 
   const fetchMakeup = async () => {
     try {
-      const res = await fetch('http://localhost:5000/makeup/all');
+      const res = await fetch('https://shreepratha.onrender.com/makeup/all');
       if (!res.ok) throw new Error('Failed to fetch makeup');
       const data = await res.json();
       setMakeupList(data);
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
 
   const fetchBags = async () => {
     try {
-      const res = await fetch('http://localhost:5000/bag/');
+      const res = await fetch('https://shreepratha.onrender.com/bag/');
       if (!res.ok) throw new Error('Failed to fetch bags');
       const data = await res.json();
       setBagList(data);
@@ -246,7 +246,7 @@ export default function AdminDashboard() {
 
   const fetchLingerie = async () => {
     try {
-      const res = await fetch('http://localhost:5000/inner/');
+      const res = await fetch('https://shreepratha.onrender.com/inner/');
       if (!res.ok) throw new Error('Failed to fetch lingerie');
       const data = await res.json();
       setLingerieList(data);
@@ -281,7 +281,7 @@ export default function AdminDashboard() {
   const fetchUsers = async () => {
     setLoadingUsers(true);
     try {
-      const res = await fetch('http://localhost:5000/admin/user-summary');
+      const res = await fetch('https://shreepratha.onrender.com/admin/user-summary');
       const data = await res.json();
       setUserList(data.userDetails || []);
     } catch (err) {
@@ -364,7 +364,7 @@ export default function AdminDashboard() {
     });
     if (!ok) return;
     try {
-      const res = await fetch(`http://localhost:5000/admin/users/${userId}`, { method: 'DELETE' });
+      const res = await fetch(`https://shreepratha.onrender.com/admin/users/${userId}`, { method: 'DELETE' });
       if (res.ok) {
         setUserList(prev => prev.filter(user => user.userId !== userId));
         toastSuccess('User deleted successfully');

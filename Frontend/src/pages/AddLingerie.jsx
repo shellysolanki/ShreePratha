@@ -25,7 +25,7 @@ export default function AddLingerie() {
 
   useEffect(() => {
     if (isEditMode) {
-      fetch(`http://localhost:5000/inner/${id}`)
+      fetch(`https://shreepratha.onrender.com/inner/${id}`)
         .then(res => res.json())
         .then(data => setFormData({
           ...data,
@@ -58,7 +58,7 @@ export default function AddLingerie() {
 
   const handleDelete = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/inner/${formData._id}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/inner/${formData._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -95,8 +95,8 @@ export default function AddLingerie() {
     if (!result.valid) { toastError(result.message); setLoading(false); return; }
     
     const endpoint = isEditMode
-      ? `http://localhost:5000/inner/${id}`
-      : 'http://localhost:5000/inner/';
+      ? `https://shreepratha.onrender.com/inner/${id}`
+      : 'https://shreepratha.onrender.com/inner/';
 
     // Convert comma-separated strings to arrays
     const submitData = {

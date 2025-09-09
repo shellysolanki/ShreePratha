@@ -10,7 +10,7 @@ export default function ProductReviews({ productId, productType }) {
 
   useEffect(() => {
     if (!productId || !productType) return;
-    fetch(`http://localhost:5000/review/product/${productId}?productType=${encodeURIComponent(productType)}`)
+    fetch(`https://shreepratha.onrender.com/review/product/${productId}?productType=${encodeURIComponent(productType)}`)
       .then((r) => r.json())
       .then((data) => setReviews(data.reviews || []))
       .catch(() => {});
@@ -24,7 +24,7 @@ export default function ProductReviews({ productId, productType }) {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/review/', {
+      const res = await fetch('https://shreepratha.onrender.com/review/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ rating, comment, productId, productType }),
@@ -34,7 +34,7 @@ export default function ProductReviews({ productId, productType }) {
         setComment('');
         setRating(5);
         // Refresh reviews to show the new one immediately
-        fetch(`http://localhost:5000/review/product/${productId}?productType=${encodeURIComponent(productType)}`)
+        fetch(`https://shreepratha.onrender.com/review/product/${productId}?productType=${encodeURIComponent(productType)}`)
           .then((r) => r.json())
           .then((data) => setReviews(data.reviews || []))
           .catch(() => {});

@@ -25,7 +25,7 @@ export default function ProductDetails() {
           navigate('/Categories');
           return;
         }
-        const res = await fetch(`http://localhost:5000/${base}/${id}`);
+        const res = await fetch(`https://shreepratha.onrender.com/${base}/${id}`);
         const data = await res.json();
         if (!res.ok || !data) throw new Error('Not found');
         setItem(data || null);

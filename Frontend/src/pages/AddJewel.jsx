@@ -23,7 +23,7 @@ export default function AddJewel() {
 
   useEffect(() => {
     if (isEditMode) {
-      fetch(`http://localhost:5000/jewellery/${id}`)
+      fetch(`https://shreepratha.onrender.com/jewellery/${id}`)
         .then(res => res.json())
         .then(data => setFormData(data))
         .catch(err => console.error('Failed to fetch item:', err));
@@ -52,7 +52,7 @@ export default function AddJewel() {
 
   const handleDelete = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/jewellery/${formData._id}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/jewellery/${formData._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -87,8 +87,8 @@ export default function AddJewel() {
     );
     if (!result.valid) { toastError(result.message); setLoading(false); return; }
     const endpoint = isEditMode
-      ? `http://localhost:5000/jewellery/update/${id}`
-      : 'http://localhost:5000/jewellery/add';
+      ? `https://shreepratha.onrender.com/jewellery/update/${id}`
+      : 'https://shreepratha.onrender.com/jewellery/add';
 
     try {
       const res = await fetch(endpoint, {

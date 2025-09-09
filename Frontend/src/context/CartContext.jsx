@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   const loadCart = useCallback(async () => {
     if (!token || !userId || isAdmin) { setItems([]); setCount(0); return; }
     try {
-      const res = await fetch(`http://localhost:5000/cart/${userId}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/cart/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = useCallback(async (productId, quantity = 1) => {
     if (!token || !userId || isAdmin) return false;
     try {
-      const res = await fetch('http://localhost:5000/cart', {
+      const res = await fetch('https://shreepratha.onrender.com/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ user: userId, product: productId, quantity })

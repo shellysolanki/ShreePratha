@@ -23,7 +23,7 @@ export default function Cart() {
         return toastError('Please login to view your cart');
       }
       try {
-        const res = await fetch(`http://localhost:5000/cart/${userId}`, {
+        const res = await fetch(`https://shreepratha.onrender.com/cart/${userId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await res.json();
@@ -41,7 +41,7 @@ export default function Cart() {
 
   const changeQty = async (productId, quantity) => {
     try {
-      const res = await fetch(`http://localhost:5000/cart/${userId}/${productId}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/cart/${userId}/${productId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ quantity })
@@ -56,7 +56,7 @@ export default function Cart() {
 
   const removeItem = async (productId) => {
     try {
-      const res = await fetch(`http://localhost:5000/cart/${userId}/${productId}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/cart/${userId}/${productId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -117,7 +117,7 @@ export default function Cart() {
       console.log('User ID:', userId);
       console.log('Token:', validToken ? 'Present' : 'Missing');
       
-      const keyResp = await fetch('http://localhost:5000/payment/razorpay/key');
+      const keyResp = await fetch('https://shreepratha.onrender.com/payment/razorpay/key');
       const keyData = await keyResp.json();
       console.log('Razorpay key response:', keyData);
       if (!keyData?.key) return toastError(keyData?.error || 'Razorpay key not configured');
@@ -126,7 +126,7 @@ export default function Cart() {
         .replace(/[^a-zA-Z0-9_]/g, '')
         .slice(0, 40);
 
-      const res = await fetch('http://localhost:5000/payment/razorpay/order', {
+      const res = await fetch('https://shreepratha.onrender.com/payment/razorpay/order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ export default function Cart() {
         order_id: data.order.id,
         handler: async function (response) {
           try {
-            const verifyRes = await fetch('http://localhost:5000/payment/razorpay/verify', {
+            const verifyRes = await fetch('https://shreepratha.onrender.com/payment/razorpay/verify', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

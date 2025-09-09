@@ -31,7 +31,7 @@ function Categories() {
   const handleLingerieDelete = (id) => setLingerie((prev) => prev.filter((p) => p._id !== id));
 
   useEffect(() => {
-    fetch('http://localhost:5000/jewellery/all')
+    fetch('https://shreepratha.onrender.com/jewellery/all')
       .then((res) => res.json())
       .then((data) => {
         const items = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : (data ? [data] : []));
@@ -41,7 +41,7 @@ function Categories() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:5000/makeup/all')
+    fetch('https://shreepratha.onrender.com/makeup/all')
       .then((res) => res.json())
       .then((data) => {
         const items = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : (data ? [data] : []));
@@ -51,7 +51,7 @@ function Categories() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:5000/bag/')
+    fetch('https://shreepratha.onrender.com/bag/')
       .then((res) => res.json())
       .then((data) => {
         const items = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : (data ? [data] : []));
@@ -61,7 +61,7 @@ function Categories() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:5000/inner/')
+    fetch('https://shreepratha.onrender.com/inner/')
       .then((res) => res.json())
       .then((data) => {
         const items = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : (data ? [data] : []));

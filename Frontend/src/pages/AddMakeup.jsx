@@ -24,7 +24,7 @@
 //   // Fetch existing item if editing
 //   useEffect(() => {
 //     if (isEditMode) {
-//       fetch(`http://localhost:5000/makeup/${id}`)
+//       fetch(`https://shreepratha.onrender.com/makeup/${id}`)
 //         .then(res => res.json())
 //         .then(data => setFormData(data))
 //         .catch(err => console.error('Failed to fetch item:', err));
@@ -55,7 +55,7 @@
 //     if (!formData._id) return;
 
 //     try {
-//       const res = await fetch(`http://localhost:5000/makeup/${formData._id}`, {
+//       const res = await fetch(`https://shreepratha.onrender.com/makeup/${formData._id}`, {
 //         method: 'DELETE',
 //         headers: { 'Content-Type': 'application/json' },
 //       });
@@ -88,8 +88,8 @@
 
 //     try {
 //       const url = isEditMode
-//         ? `http://localhost:5000/makeup/${formData._id}`
-//         : 'http://localhost:5000/makeup/add';
+//         ? `https://shreepratha.onrender.com/makeup/${formData._id}`
+//         : 'https://shreepratha.onrender.com/makeup/add';
 
 //       const method = isEditMode ? 'PUT' : 'POST';
 
@@ -269,7 +269,7 @@ export default function AddMakeup() {
   // Fetch existing item if editing
   useEffect(() => {
     if (isEditMode) {
-      fetch(`http://localhost:5000/makeup/${id}`)
+      fetch(`https://shreepratha.onrender.com/makeup/${id}`)
         .then(res => res.json())
         .then(data => setFormData(data))
         .catch(err => console.error('Failed to fetch item:', err));
@@ -300,7 +300,7 @@ export default function AddMakeup() {
     if (!formData._id) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/makeup/${formData._id}`, {
+      const res = await fetch(`https://shreepratha.onrender.com/makeup/${formData._id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -366,8 +366,8 @@ export default function AddMakeup() {
 
     try {
       const url = isEditMode
-        ? `http://localhost:5000/makeup/${formData._id}`
-        : 'http://localhost:5000/makeup/add';
+        ? `https://shreepratha.onrender.com/makeup/${formData._id}`
+        : 'https://shreepratha.onrender.com/makeup/add';
 
       const method = isEditMode ? 'PUT' : 'POST';
 

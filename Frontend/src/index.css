@@ -1,0 +1,22 @@
+/* Normalize SVGs that declare width/height="auto" to avoid console warnings */
+svg[width="auto"] {
+  width: 1em !important;
+}
+
+svg[height="auto"] {
+  height: 1em !important;
+}
+
+svg[width="auto"][height="auto"] {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+
+
+
+

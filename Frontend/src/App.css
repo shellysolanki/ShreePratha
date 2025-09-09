@@ -1,0 +1,30 @@
+/* Remove all spacing globally */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: pink rgb(253, 234, 172);
+}
+
+*{
+    overflow-x: hidden;
+}
+
+/* Section spacing reset */
+.section-gap {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+/* Footer spacing — keep only if needed */
+.footer-gap {
+  margin-top: 20rem; /* You can reduce this if it's pushing layout too far */
+}
+
+/* Carousel full width */
+#mainCarousel {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+}

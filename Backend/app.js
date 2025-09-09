@@ -84,7 +84,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // ✅ CORS config for frontend integration
-app.use(cors({ origin: 'https://shreepratha-1.onrender.com', credentials: true }));
+app.use(cors({ origin: 'https://shreepratha-1.onrender.com',methods:["GET","POST","PUT","DELETE"], credentials: true }));
 
 // ✅ MongoDB connection
 mongoose.connect("mongodb+srv://shellysolanki63_db_user:WHxspf2Lw3dJC4CW@shreepratha.h2ydyuz.mongodb.net/")
